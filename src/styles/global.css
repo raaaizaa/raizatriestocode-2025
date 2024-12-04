@@ -1,8 +1,21 @@
+@font-face {
+  font-family: 'Mustasurma';
+  src: url('../../public/fonts/Mustasurma.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sourcesans';
+  src: url('../../public/fonts/SourceSans.ttf') format('truetype');
+}
+
 body {
   margin-left: 200px;
   margin-right: 200px;
   margin-top: 0;
   margin-bottom: 0;
+  font-family: 'Sourcesans';
+  color: white;
+  background-color: rgb(24, 24, 24);
 }
 
 @media (max-width: 1024px) {

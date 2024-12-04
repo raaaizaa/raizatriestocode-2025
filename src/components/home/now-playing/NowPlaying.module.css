@@ -1,7 +1,40 @@
 .container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  gap: 24px;
 }
 
 .title{
-  font-size: 32px;
+  font-family: 'Mustasurma';
+  font-size: 82px;
+  margin: 0;
+}
+
+.spotifyCardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+  gap: 24px;
+}
+
+.spotifyTextContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;  
+}
+
+.spotifyTitle{
+  font-family: 'Sourcesans';
+  font-size: 36px;
+  margin: 0;
+}
+
+.spotifyArtist{
+  font-family: 'Sourcesans';
+  font-size: 20px;
+  margin: 0;
 }

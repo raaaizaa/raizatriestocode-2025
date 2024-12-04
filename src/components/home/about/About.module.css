@@ -1,7 +1,20 @@
 .container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  width: 600px;
+  gap: 24px;
 }
 
-.title{
-  font-size: 32px;
+.title {
+  font-family: 'Mustasurma';
+  font-size: 82px;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Sourcesans';
+  font-size: 19px;
+  text-align: justify;
+  margin: 0;
 }

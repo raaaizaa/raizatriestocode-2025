@@ -1,46 +1,58 @@
-import React from 'react'
-import styles from './NowPlaying.module.css'
+import React, { useEffect, useState } from 'react';
+import getNowPlaying from '../../../services/getNowPlaying';
+import styles from './NowPlaying.module.css';
 
 export default function NowPlaying() {
+  const [nowPlayingData, setNowPlayingData] = useState<any | null>(null);
+
+  useEffect(() => {
+    const fetchNowPlaying = async () => {
+      try {
+        const data = await getNowPlaying();
+        setNowPlayingData(data);
+      } catch (error) {
+        console.error('Error fetching now playing data:', error);
+      }
+    };
+
+    fetchNowPlaying();
+
+    const interval = setInterval(() => {
+      fetchNowPlaying();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const spotifyCard = () => (
+    <div className={styles.spotifyCardContainer}>
+      <a href={nowPlayingData?.trackUrl} target="_blank">
+        <img
+          alt="album-cover"
+          src={nowPlayingData?.albumImage}
+          width={200}
+          height={200}
+        />
+      </a>
+      <div className={styles.spotifyTextContainer}>
+        <p className={styles.spotifyTitle}>
+          {nowPlayingData?.trackName.length > 25
+            ? `${nowPlayingData?.trackName.substring(0, 25)}...`
+            : nowPlayingData?.trackName}
+        </p>
+        <p className={styles.spotifyArtist}>
+          {nowPlayingData?.artistName > 25
+            ? `${nowPlayingData?.artistName.substring(0, 25)}...`
+            : nowPlayingData?.artistName}
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.container}>
-        <p className={styles.title}>NOW PLAYING</p>
-        <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Bibendum facilisis
-        fames rutrum phasellus a fames enim scelerisque tellus. Duis massa
-        litora donec maximus non blandit massa tristique. Nam dictumst aliquam
-        aliquam tristique felis metus faucibus. Risus mollis eleifend amet
-        posuere tellus. Lacus egestas adipiscing mus cras cursus. Praesent elit
-        molestie libero torquent sem. Tortor facilisi curabitur metus ligula
-        sagittis aptent dui mattis. Pharetra proin lorem sagittis eu conubia
-        euismod primis risus. Fusce consequat senectus curae scelerisque
-        himenaeos, facilisi sagittis. Hendrerit vulputate eros quisque; dictumst
-        aptent dui dictum. Praesent a finibus viverra aenean, cursus dictumst
-        nostra. Dolor ac eget conubia habitant gravida sit facilisis. Pretium
-        viverra ridiculus vivamus aliquet convallis sollicitudin bibendum? Ante
-        leo montes netus eget mattis. Ultricies odio ex dis primis conubia
-        purus. Efficitur erat adipiscing nisl ad tempor penatibus leo. Nisl
-        venenatis penatibus netus viverra posuere. Suspendisse ultricies
-        volutpat himenaeos erat urna diam integer interdum. Torquent vulputate
-        dapibus parturient nisi cursus dictum luctus dis.
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Bibendum facilisis
-        fames rutrum phasellus a fames enim scelerisque tellus. Duis massa
-        litora donec maximus non blandit massa tristique. Nam dictumst aliquam
-        aliquam tristique felis metus faucibus. Risus mollis eleifend amet
-        posuere tellus. Lacus egestas adipiscing mus cras cursus. Praesent elit
-        molestie libero torquent sem. Tortor facilisi curabitur metus ligula
-        sagittis aptent dui mattis. Pharetra proin lorem sagittis eu conubia
-        euismod primis risus. Fusce consequat senectus curae scelerisque
-        himenaeos, facilisi sagittis. Hendrerit vulputate eros quisque; dictumst
-        aptent dui dictum. Praesent a finibus viverra aenean, cursus dictumst
-        nostra. Dolor ac eget conubia habitant gravida sit facilisis. Pretium
-        viverra ridiculus vivamus aliquet convallis sollicitudin bibendum? Ante
-        leo montes netus eget mattis. Ultricies odio ex dis primis conubia
-        purus. Efficitur erat adipiscing nisl ad tempor penatibus leo. Nisl
-        venenatis penatibus netus viverra posuere. Suspendisse ultricies
-        volutpat himenaeos erat urna diam integer interdum. Torquent vulputate
-        dapibus parturient nisi cursus dictum luctus dis.
-      </p>
+      <p className={styles.title}>{nowPlayingData?.playedAt ? 'LAST PLAYED' : 'NOW PLAYING'}</p>
+      {nowPlayingData ? spotifyCard() : <p>Loading</p>}
     </div>
-  )
+  );
 }
