@@ -13,7 +13,7 @@ async function getAccessToken(): Promise<string> {
       },
       body: new URLSearchParams({
         grant_type: 'refresh_token',
-        refresh_token: REFRESH_TOKEN,
+        refresh_token: REFRESH_TOKEN || '',
       }).toString(),
     });
 
