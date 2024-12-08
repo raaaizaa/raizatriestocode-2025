@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import postMessage from '../../../services/postMessage';
-import { formDataProps } from '../../../types/formData';
+import { FormDataProps } from '../../../types/formData';
 
 export default function MessageForm() {
-  const [formData, setFormData] = useState<formDataProps>({
+  const [formData, setFormData] = useState<FormDataProps>({
     name: '',
     message: '',
   });

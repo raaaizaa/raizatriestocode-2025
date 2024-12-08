@@ -2,6 +2,12 @@ import MarkdownIt from 'markdown-it';
 
 const TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
+
 export async function getPost() {
   try {
     const response = await fetch(
@@ -35,7 +41,6 @@ export async function getHeadline() {
         const textContent = await response.text();
 
         // To be honest, for the image part I am completely using the ChatGPT :/
-        const md = new MarkdownIt();
         const htmlContent = md.render(textContent);
 
         const imageMatch = htmlContent.match(/<img [^>]*src="([^"]+)"/);
@@ -44,6 +49,7 @@ export async function getHeadline() {
         const firstLine = textContent.split('\n')[0];
 
         return {
+          id: item.id,
           url: item.files['index.md'].raw_url,
           headline: firstLine,
           description: item.description,
@@ -56,5 +62,27 @@ export async function getHeadline() {
     return headlines;
   } catch (error) {
     console.error(error);
+  }
+}
+
+export async function getPostDetail(id: string) {
+  try {
+    const response = await fetch(`https://api.github.com/gists/${id}`, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+
+    const data = await response.json();
+
+    const formattedContent = md.render(data.files['index.md'].content);
+
+    return {
+      content: formattedContent,
+      description: data.description,
+      created_at: data.created_at,
+    };
+  } catch (error) {
+    console.error();
   }
 }

@@ -1,9 +1,9 @@
-import { formDataProps } from '../types/formData';
+import { FormDataProps } from '../types/formData';
 
 const SHEETS_ID = process.env.REACT_APP_SHEETS_ID;
 
 export default async function postMessage(
-  formData: formDataProps
+  formData: FormDataProps
 ): Promise<boolean> {
   try {
     const response = await fetch(

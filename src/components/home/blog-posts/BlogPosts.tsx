@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getHeadline, getPost } from '../../../services/getPost';
+import PostCard from '../post-card/PostCard';
 
 export default function BlogPosts() {
   const [post, setPost] = useState<any | null>(null);
@@ -22,20 +23,8 @@ export default function BlogPosts() {
       <h1>Blog Posts</h1>
       {post ? (
         <div>
-          {post.map((item: any, index: number) => (
-            <div key={index}>
-              <p dangerouslySetInnerHTML={{ __html: item.headline }} />{' '}
-              {item.first_image ? <img src={item.first_image} /> : null}
-              <p>{item.description}</p>
-              <p>
-                {new Date(item.created_at).toLocaleDateString('en-GB', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </p>
-            </div>
+          {post.map((post: any, index: number) => (
+            <PostCard post={post} index={index} />
           ))}
         </div>
       ) : (
