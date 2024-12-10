@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getHeadline, getPost } from '../../../services/getPost';
 import PostCard from '../post-card/PostCard';
 
+import styles from './BlogPosts.module.css'
+
 export default function BlogPosts() {
   const [post, setPost] = useState<any | null>(null);
 
@@ -19,10 +21,10 @@ export default function BlogPosts() {
   }, []);
 
   return (
-    <div>
-      <h1>Blog Posts</h1>
+    <div className={styles.container}>
+      <p className={styles.title}>Posts</p>
       {post ? (
-        <div>
+        <div className={styles.postContainer}>
           {post.map((post: any, index: number) => (
             <PostCard post={post} index={index} />
           ))}

@@ -46,13 +46,16 @@ export async function getHeadline() {
         const imageMatch = htmlContent.match(/<img [^>]*src="([^"]+)"/);
         const firstImage = imageMatch ? imageMatch[1] : null;
 
-        const firstLine = textContent.split('\n')[0];
+        const splittedLine = textContent.split('\n');
+        const firstLine = splittedLine[0];
+        const remainingText = splittedLine.slice(1).join('\n');
 
         return {
           id: item.id,
           url: item.files['index.md'].raw_url,
           headline: firstLine,
-          description: item.description,
+          tag: item.description,
+          cutted_description: `${remainingText.substring(0, 200)}...`,
           created_at: item.created_at,
           first_image: firstImage,
         };

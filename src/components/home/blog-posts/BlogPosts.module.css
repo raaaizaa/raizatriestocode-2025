@@ -2,18 +2,11 @@
   display: flex;
   flex-direction: column;
   padding: 36px;
-  /* width: 600px; */
-  gap: 24px;
+  gap: 40px;
 }
 
 .title {
   font-family: 'Mustasurma';
-  font-size: 4vw;
-  margin: 0;
-}
-
-.subtitle {
-  font-family: 'Sourcesans';
-  font-size: 19px;
+  font-size: 3vw;
   margin: 0;
 }

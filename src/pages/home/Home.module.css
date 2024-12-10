@@ -1,0 +1,14 @@
+.subHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.postsContainer {
+  flex: 3;
+}
+
+.aboutContainer {
+  flex: 1;
+  border-left: 0.5px black solid;
+}

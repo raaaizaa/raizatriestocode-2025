@@ -5,6 +5,12 @@ export default function About() {
   return (
     <div className={styles.container}>
       <p className={styles.title}>ABOUT</p>
+      <img
+        src="portrait.jpg"
+        width={250}
+        height={250}
+        alt="raiza-tapi-bentuknya-gambar"
+      />
       <p className={styles.subtitle}>
         Tempat seorang cowok kelahiran 2003 menuangkan pikirannya dalam bentuk
         website. Orangnya mungkin dari luar keliatannya sunyi, tapi otaknya

@@ -1,0 +1,71 @@
+.wrapper {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.container:hover .label > h1 {
+  position: relative; /* Position the pseudo-element relative to h1 */
+}
+
+.container .label > h1::after {
+  content: ''; /* Required to create the pseudo-element */
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0; /* Start with no underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #000; /* Color of the underline */
+  transition: width 0.3s ease-in-out; /* Transition the width of the underline */
+}
+
+.container:hover .label > h1::after {
+  width: 100%;
+}
+
+.imageContainer {
+  width: 150px;
+  height: 150px;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  display: block;
+}
+
+.label > h1,
+.label {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.date {
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+}
+
+.divider {
+  border-bottom: 0.5px solid;
+}
