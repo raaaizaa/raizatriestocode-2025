@@ -26,7 +26,7 @@ export default function NowPlaying() {
 
   const spotifyCard = () => (
     <div className={styles.spotifyCardContainer}>
-      <a href={nowPlayingData?.trackUrl} target="_blank">
+      <a href={nowPlayingData?.trackUrl} target="_blank" className={styles.albumAnchor}>
         <img
           alt="album-cover"
           src={nowPlayingData?.albumImage}

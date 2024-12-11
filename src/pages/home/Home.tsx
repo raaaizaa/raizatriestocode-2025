@@ -10,6 +10,21 @@ import NowPlaying from '../../components/home/now-playing/NowPlaying';
 
 export default function Home() {
   return (
+    // <>
+    //   <Header />
+    //   <div className={styles.subHeaderContainer}>
+    //     <div className={styles.postsContainer}>
+    //       <BlogPosts />
+    //     </div>
+    //     <div className={styles.aboutContainer}>
+    //       <About />
+    //       <hr className={styles.divider}/>
+    //       <NowPlaying />
+    //       <hr className={styles.divider}/>
+    //       <MessageForm />
+    //     </div>
+    //   </div>
+    // </>
     <>
       <Header />
       <div className={styles.subHeaderContainer}>
@@ -18,9 +33,9 @@ export default function Home() {
         </div>
         <div className={styles.aboutContainer}>
           <About />
-          <hr />
+          <hr className={styles.divider} />
           <NowPlaying />
-          <hr />
+          <hr className={styles.divider} />
           <MessageForm />
         </div>
       </div>

@@ -55,7 +55,7 @@ export async function getHeadline() {
           url: item.files['index.md'].raw_url,
           headline: firstLine,
           tag: item.description,
-          cutted_description: `${remainingText.substring(0, 200)}...`,
+          cutted_description: `${remainingText.substring(0, 100)}...`,
           created_at: item.created_at,
           first_image: firstImage,
         };

@@ -3,22 +3,28 @@
   flex-direction: column;
   padding: 36px;
   gap: 24px;
+  width: 300px;
 }
 
 .title{
-  font-family: 'Mustasurma';
+  font-family: 'SohneBold';
   font-size: 2vw;
   margin: 0;
 }
 
 .spotifyCardContainer{
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  width: fit-content;
   text-transform: uppercase;
   font-weight: 600;
   margin: 0;
   gap: 24px;
+}
+
+.albumAnchor{
+  width: fit-content;
+  height: fit-content;
 }
 
 .spotifyTextContainer{

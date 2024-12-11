@@ -20,7 +20,7 @@ export default function Jumplinks() {
           <p>Message</p>
         </Link>
       </div>
-      <hr />
+      <div className={styles.divider} />
     </div>
   );
 }

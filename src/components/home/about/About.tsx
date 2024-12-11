@@ -7,8 +7,8 @@ export default function About() {
       <p className={styles.title}>ABOUT</p>
       <img
         src="portrait.jpg"
-        width={250}
-        height={250}
+        width={300}
+        height={300}
         alt="raiza-tapi-bentuknya-gambar"
       />
       <p className={styles.subtitle}>
@@ -18,7 +18,7 @@ export default function About() {
         sedikit wibu (biasanya gua sebut dengan part-time weeaboo). Seringkali
         punya banyak ide tentang banyak hal tapi males eksekusi atau eksekusinya
         gak sesuai ekspektasi. Salah satunya website ini yang udah ada di dalem
-        pikiran dari taun 2023 tapi baru direalisasikan sekarang. Suka minum
+        pikiran dari taun 2023 tapi baru direalisasikan akhir-akhir ini. Suka minum
         susu tiga kali sehari.
       </p>
     </div>

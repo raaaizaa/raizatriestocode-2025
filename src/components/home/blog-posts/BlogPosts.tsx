@@ -22,7 +22,6 @@ export default function BlogPosts() {
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>Posts</p>
       {post ? (
         <div className={styles.postContainer}>
           {post.map((post: any, index: number) => (
