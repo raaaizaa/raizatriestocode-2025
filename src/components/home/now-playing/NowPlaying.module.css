@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 36px;
   gap: 24px;
   width: 300px;
 }
@@ -16,7 +15,6 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
-  text-transform: uppercase;
   font-weight: 600;
   margin: 0;
   gap: 24px;
@@ -34,13 +32,13 @@
 }
 
 .spotifyTitle{
-  font-family: 'Sourcesans';
-  font-size: 36px;
+  font-family: 'SohneBold';
+  font-size: 28px;
   margin: 0;
 }
 
 .spotifyArtist{
-  font-family: 'Sourcesans';
+  font-family: 'SohneBold';
   font-size: 20px;
   margin: 0;
 }

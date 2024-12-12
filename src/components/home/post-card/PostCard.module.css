@@ -67,11 +67,12 @@
 }
 
 .description {
+  font-family: 'SohneLight';
   margin: 0;
   padding: 0;
   color: #6b6b6b;
 }
 
 .divider {
-  border-bottom: 0.5px solid rgb(242, 242, 242);
+  border-top: 0.5px solid rgb(242, 242, 242);
 }

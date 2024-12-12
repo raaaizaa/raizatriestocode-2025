@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  gap: 8px;
+}
+
+.text {
+  font-family: 'SohneLight';
+  color: white;
+  line-height: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-smooth: always;
+}

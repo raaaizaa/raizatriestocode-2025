@@ -23,6 +23,7 @@ export default function PostCard({ post, index }: PostCardProps) {
 
   return (
     <Link to={`/post/${id}`} className={styles.wrapper}>
+      <div className={styles.divider} />
       <div key={index} className={styles.container}>
         <div className={styles.textContainer}>
           <p
@@ -40,7 +41,6 @@ export default function PostCard({ post, index }: PostCardProps) {
           </div>
         ) : null}
       </div>
-      <div className={styles.divider} />
     </Link>
   );
 }

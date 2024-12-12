@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import postMessage from '../../../services/postMessage';
 import { FormDataProps } from '../../../types/formData';
 
+import styles from './MessageForm.module.css';
+
 export default function MessageForm() {
   const [formData, setFormData] = useState<FormDataProps>({
     name: '',
@@ -33,11 +35,11 @@ export default function MessageForm() {
   };
 
   return (
-    <div>
-      <p>Send me a message</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+    <div className={styles.container}>
+      <p className={styles.label}>Send me a message</p>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <div className={styles.inputContainer}>
+          <p className={styles.inputLabel}>Name: </p>
           <input
             type="text"
             name="name"
@@ -45,17 +47,16 @@ export default function MessageForm() {
             onChange={handleChange}
             required
           />
-        </label>
-        <br />
-        <label>
-          Message:
+        </div>
+        <div className={styles.inputContainer}>
+          <p className={styles.inputLabel}>Message: </p>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             required
           />
-        </label>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

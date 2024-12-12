@@ -1,18 +1,21 @@
-.subHeaderContainer {
+.container {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.postsContainer {
-  flex: 3;
-}
-
-.aboutContainer {
+  justify-content: center;
+  margin: auto;
   flex: 1;
-  border-left: 1px rgb(242, 242, 242) solid;
+  gap: 20px; /* Optional: space between main content and sidebar */
 }
 
 .divider {
-  border: 1px solid rgb(242, 242, 242);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgb(242, 242, 242);
+  gap: 36px;
+  padding: 36px;
+  width: 300px; /* Fixed width for the sidebar */
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
+}
+
+.blogPosts {
+  flex: 1; /* This allows the blog posts to take up the remaining space */
 }

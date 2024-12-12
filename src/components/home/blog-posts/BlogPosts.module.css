@@ -7,6 +7,13 @@
 
 .title {
   font-family: 'SohneBold';
-  font-size: 3vw;
+  font-size: 2vw;
   margin: 0;
+  width: 600px;
+}
+
+.subtitle {
+  font-family: 'SohneLight';
+  color: #6b6b6b;
+  font-size: 14px;
 }
