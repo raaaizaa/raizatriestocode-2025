@@ -46,6 +46,7 @@ export default function MessageForm() {
             value={formData.name}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -55,9 +56,10 @@ export default function MessageForm() {
             value={formData.message}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.submitButton}>Submit</button>
       </form>
     </div>
   );

@@ -1,19 +1,25 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 36px;
-  gap: 40px;
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    gap: 40px;
 }
 
-.title {
-  font-family: 'SohneBold';
-  font-size: 2vw;
-  margin: 0;
-  width: 600px;
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.subtitle {
-  font-family: 'SohneLight';
-  color: #6b6b6b;
-  font-size: 14px;
+.title{
+    font-family: 'SohneBold';
+    font-size: 40px;
+    margin: 0;
+}
+
+.subtitle{
+    font-family: 'SohneLight';
+    font-size: 16px;
+    margin: 0;
+    color: #6b6b6b;
 }

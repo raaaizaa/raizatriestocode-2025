@@ -7,38 +7,6 @@
 
 .title{
   font-family: 'SohneBold';
-  font-size: 2vw;
-  margin: 0;
-}
-
-.spotifyCardContainer{
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  font-weight: 600;
-  margin: 0;
-  gap: 24px;
-}
-
-.albumAnchor{
-  width: fit-content;
-  height: fit-content;
-}
-
-.spotifyTextContainer{
-  display: flex;
-  flex-direction: column;
-  gap: 4px;  
-}
-
-.spotifyTitle{
-  font-family: 'SohneBold';
-  font-size: 28px;
-  margin: 0;
-}
-
-.spotifyArtist{
-  font-family: 'SohneBold';
-  font-size: 20px;
+  font-size: 40px;
   margin: 0;
 }

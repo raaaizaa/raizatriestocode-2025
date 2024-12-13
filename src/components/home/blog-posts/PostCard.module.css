@@ -1,0 +1,85 @@
+.wrapper {
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.divider {
+  border-top: 0.5px solid rgb(242, 242, 242);
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  gap: 12px;
+}
+
+.label,
+.label > h1 {
+  font-family: 'SohneBold';
+  color: black;
+  margin: 0;
+}
+
+.textInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.description {
+  font-family: 'SohneLight';
+  font-size: 16px;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.date {
+  margin: 0;
+}
+
+.imageContainer {
+  width: 160px;
+  height: 107px;
+}
+
+.image {
+  width: 160px;
+  height: 107px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .label,
+  .label > h1 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .date {
+    font-size: 10px;
+  }
+
+  .image,
+  .imageContainer {
+    width: 96px;
+    height: 64px;
+  }
+}

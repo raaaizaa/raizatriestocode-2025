@@ -1,0 +1,33 @@
+.spotifyCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  font-weight: 600;
+  margin: 0;
+  gap: 24px;
+}
+
+
+.artworkPlaceholder {
+  width: 300px;
+  height: 300px;
+  background-color: #c9c9c9;
+}
+
+.spotifyTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spotifyTitle {
+  font-family: 'SohneBold';
+  font-size: 28px;
+  margin: 0;
+}
+
+.spotifyArtist {
+  font-family: 'SohneLight';
+  font-size: 20px;
+  margin: 0;
+}

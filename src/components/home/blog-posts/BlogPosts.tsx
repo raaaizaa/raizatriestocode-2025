@@ -1,43 +1,80 @@
 import React, { useEffect, useState } from 'react';
-import { getHeadline, getPost } from '../../../services/getPost';
-import PostCard from '../post-card/PostCard';
+import { getHeadline } from '../../../services/getPost';
+import PostCard from './PostCard';
+import LoadingPostCard from './LoadingPostCard';
+import Pagination from './Pagination';
+import { PostProps } from '../../../types/post';
 
 import styles from './BlogPosts.module.css';
 
+const POSTS_PER_PAGE = 8;
+
 export default function BlogPosts() {
-  const [post, setPost] = useState<any | null>(null);
+  const [data, setData] = useState<PostProps[]>();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
+        setIsLoading(true);
         const data = await getHeadline();
-        setPost(data);
+        setData(data);
       } catch (error) {
         console.error('Error fetching posts or Markdown!', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchPost();
   }, []);
 
+  // Calculate the displayed posts for the current page
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const displayedPosts = data?.slice(startIndex, endIndex);
+
+  // Handle pagination controls
+  const totalPages = Math.ceil((data?.length || 0) / POSTS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.titleContainer}>
         <p className={styles.title}>
           A personal blog that consists of his thoughts over time.
         </p>
         <p className={styles.subtitle}>
-          Karena biasanya banyak hal yang dipikirin tapi gatau mau ditaro dimana.
+          Karena biasanya banyak hal yang dipikirin tapi gatau mau ditaro
+          dimana.
         </p>
       </div>
-      {post ? (
-        <div className={styles.postContainer}>
-          {post.map((post: any, index: number) => (
-            <PostCard post={post} index={index} />
+
+      {isLoading ? (
+        <div className={styles.dataContainer}>
+          {Array.from({ length: POSTS_PER_PAGE }).map((_, index) => (
+            <LoadingPostCard key={index} />
           ))}
         </div>
       ) : (
-        <p>Loading...</p>
+        <>
+          <div className={styles.dataContainer}>
+            {displayedPosts?.map((post, index) => (
+              <PostCard post={post} key={`${post.id}-${index}`} />
+            ))}
+          </div>
+          {totalPages > 1 && (
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              handlePageChange={handlePageChange}
+            />
+          )}
+        </>
       )}
     </div>
   );
