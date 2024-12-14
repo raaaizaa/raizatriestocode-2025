@@ -1,3 +1,25 @@
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  background-image: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 50%,
+    #e0e0e0 100%
+  );
+  background-size: 400px 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
 .spotifyCardContainer {
   display: flex;
   flex-direction: column;
@@ -6,7 +28,6 @@
   margin: 0;
   gap: 24px;
 }
-
 
 .artworkPlaceholder {
   width: 300px;
@@ -17,17 +38,52 @@
 .spotifyTextContainer {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 16px;
 }
 
 .spotifyTitle {
-  font-family: 'SohneBold';
-  font-size: 28px;
+  background-color: #c9c9c9;
+  height: 28px;
+  width: 240px;
   margin: 0;
 }
 
 .spotifyArtist {
-  font-family: 'SohneLight';
-  font-size: 20px;
+  background-color: #c9c9c9;
+  height: 20px;
+  width: 140px;
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .artworkPlaceholder {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .spotifyCardContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 670px) {
+  .spotifyCardContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .spotifyTextContainer {
+    gap: 12px;
+  }
+
+  .spotifyTitle {
+    font-size: 24px;
+  }
+
+  .spotifyArtist {
+    font-size: 16px;
+  }
 }

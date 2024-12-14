@@ -11,8 +11,12 @@ export default function Home() {
     <div className={styles.container}>
       <BlogPosts />
       <div className={styles.divider}>
-        <About />
-        <NowPlaying />
+        <div className={styles.aboutContainer}>
+          <About />
+          <div className={styles.aboutDivider}/>
+          <NowPlaying />
+        </div>
+        <div className={styles.messageDivider}/>
         <MessageForm />
       </div>
     </div>

@@ -1,25 +1,51 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    padding: 36px;
-    gap: 40px;
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  gap: 40px;
 }
 
-.titleContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.title{
-    font-family: 'SohneBold';
-    font-size: 40px;
-    margin: 0;
+.title {
+  font-family: 'SohneBold';
+  font-size: 40px;
+  margin: 0;
 }
 
-.subtitle{
-    font-family: 'SohneLight';
-    font-size: 16px;
-    margin: 0;
-    color: #6b6b6b;
+.subtitle {
+  font-family: 'SohneLight';
+  font-size: 16px;
+  margin: 0;
+  color: #6b6b6b;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 28px;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 24px;
+    gap: 28px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
 }

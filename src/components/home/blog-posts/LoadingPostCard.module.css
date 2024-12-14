@@ -20,7 +20,9 @@
 }
 
 .wrapper {
-  width: 100%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
 }
 
 .divider {
@@ -29,11 +31,6 @@
 
 .container {
   display: flex;
-  flex-direction: row;
-  gap: 12px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  height: 150px;
   align-items: center;
   justify-content: space-between;
 }
@@ -41,8 +38,8 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
+  color: black;
+  gap: 12px;
 }
 
 .label {
@@ -73,4 +70,37 @@
   width: 160px;
   height: 107px;
   overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .contentContainer {
+    height: 140px;
+  }
+
+  .label,
+  .label > h1 {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .imagePlaceholder,
+  .imageContainer {
+    width: 120px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .imagePlaceholder,
+  .imageContainer {
+    width: 96px;
+    height: 64px;
+  }
 }

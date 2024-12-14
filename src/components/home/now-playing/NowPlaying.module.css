@@ -10,3 +10,15 @@
   font-size: 40px;
   margin: 0;
 }
+
+@media (max-width: 1050px){
+  .container{
+    width: auto;
+  }
+}
+
+@media (max-width: 670px){
+  .title{
+    font-size: 30px;
+  }
+}

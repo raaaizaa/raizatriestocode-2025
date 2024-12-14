@@ -16,7 +16,7 @@ export default function NowPlaying() {
         setData(data);
       } catch (error) {
         console.error('Error fetching now playing data:', error);
-      }
+      } 
     };
     fetchNowPlaying();
     const interval = setInterval(fetchNowPlaying, 10000);

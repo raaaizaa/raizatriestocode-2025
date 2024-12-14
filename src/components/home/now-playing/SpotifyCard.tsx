@@ -16,7 +16,7 @@ export default function SpotifyCard({
         target="_blank"
         rel="noopener noreferrer"
         className={styles.albumAnchor}>
-        <img alt="album cover" src={albumImage} width={300} height={300} />
+        <img alt="album cover" src={albumImage} className={styles.spotifyImage} />
       </a>
       <div className={styles.spotifyTextContainer}>
         <p className={styles.spotifyTitle}>

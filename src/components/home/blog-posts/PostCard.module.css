@@ -63,6 +63,31 @@
   object-fit: cover;
 }
 
+@media (max-width: 800px){
+  .contentContainer{
+    height: 140px;
+  }
+
+  .label,
+  .label > h1 {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .image,
+  .imageContainer {
+    width: 120px;
+    height: 80px;
+  }
+}
+
 @media (max-width: 600px) {
   .label,
   .label > h1 {
