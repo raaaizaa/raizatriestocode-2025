@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getHeadline } from '../../../services/getPost';
-import PostCard from './PostCard';
-import LoadingPostCard from './LoadingPostCard';
+
 import Pagination from './Pagination';
 import { PostProps } from '../../../types/post';
 
 import styles from './BlogPosts.module.css';
+import PostCard from '../../shared/post-card/PostCard';
+import LoadingPostCard from '../../shared/post-card/LoadingPostCard';
 
 const POSTS_PER_PAGE = 8;
 

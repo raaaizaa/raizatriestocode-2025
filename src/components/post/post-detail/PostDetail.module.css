@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: auto;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.container h1 {
+  font-family: 'SohneBold';
+  font-size: 32px;
+}
+
+.container h2 {
+  font-family: 'SohneBold';
+  font-size: 28px;
+}
+
+.container h3 {
+  font-family: 'SohneBold';
+  font-size: 24px;
+}
+
+.container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  font-size: 16px;
+  font-family: 'SohneLight';
+}
+
+.container img {
+  max-height: 500px;
+}
+
+.divider {
+  display: flex;
+  width: 100%;
+  border-top: 0.5px solid rgb(242, 242, 242);
+}
+
+.infoContainer {
+  margin: 28px 0px 28px 0px;
+}
+
+.date {
+  text-align: start;
+  justify-content: start;
+  font-family: 'SohneRegular';
+  margin: 0;
+}
+
+.fallbackContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: auto;
+  max-width: 1000px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.loadingText{
+  display: flex;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: none;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .container h3 {
+    font-size: 20px;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .container img {
+    max-height: 400px;
+  }
+}

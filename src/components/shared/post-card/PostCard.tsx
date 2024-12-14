@@ -20,7 +20,7 @@ export default function PostCard({ post }: PostCardProps) {
   );
 
   return (
-    <Link to={`/post/${id}`} className={styles.wrapper}>
+    <Link to={`/post/${id}`} target='_parent' className={styles.wrapper}>
       <div className={styles.divider} />
       <div className={styles.contentContainer}>
         <div className={styles.container}>
