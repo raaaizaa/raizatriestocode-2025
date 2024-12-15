@@ -5,7 +5,9 @@
   align-items: start;
   margin: auto;
   max-width: 1000px;
+  min-height: calc(100vh - 67px);
   box-sizing: border-box;
+  user-select: text;
 }
 
 .container h1 {
@@ -60,7 +62,7 @@
   align-items: start;
   margin: auto;
   max-width: 1000px;
-  min-height: 100vh;
+  height: calc(100vh - 67px);
   box-sizing: border-box;
 }
 

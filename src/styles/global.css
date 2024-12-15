@@ -26,4 +26,5 @@
 body {
   font-family: 'SohneRegular';
   margin: 0;
+  user-select: none;
 }

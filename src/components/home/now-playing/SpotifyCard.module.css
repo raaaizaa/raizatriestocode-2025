@@ -25,12 +25,21 @@
 
 .spotifyTitle {
   font-family: 'SohneBold';
+  text-decoration: none;
+  color: black;
   font-size: 28px;
   margin: 0;
 }
 
+.spotifyTitle:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
 .spotifyArtist {
   font-family: 'SohneLight';
+  color: #6b6b6b;
   font-size: 20px;
   margin: 0;
 }
@@ -55,11 +64,11 @@
     align-items: start;
   }
 
-  .spotifyTextContainer{
+  .spotifyTextContainer {
     gap: 0px;
   }
 
-  .spotifyImage{
+  .spotifyImage {
     width: 100%;
     height: 100%;
     box-sizing: border-box;

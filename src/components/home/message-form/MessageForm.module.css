@@ -43,6 +43,20 @@
   height: 100px;
 }
 
+.basic{
+  margin: 0;
+  font-family: 'SohneLight';
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.error{
+  margin: 0;
+  font-family: 'SohneLight';
+  font-size: 14px;
+  color: red;
+}
+
 .submitButton {
   font-family: 'SohneRegular';
   font-size: 16px;

@@ -28,9 +28,9 @@ export default function OtherPosts() {
     fetchPost();
   }, []);
 
-  if (!data || data?.length < 4) {
-    return null;
-  }
+  // if (!data || data?.length < 4) {
+  //   return null;
+  // }
 
   const displayedPosts = data?.slice(0, 4);
   

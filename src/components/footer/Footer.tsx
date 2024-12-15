@@ -13,7 +13,7 @@ export default function Footer() {
           </p>
         </div>
         <a href="https://github.com/raaaizaa" target="_blank">
-          <img src="./github-mark-white.svg" width={24} height={24} />
+          <img className={styles.githubIcon} src="./github-mark-white.svg" width={24} height={24} />
         </a>
       </div>
     </div>

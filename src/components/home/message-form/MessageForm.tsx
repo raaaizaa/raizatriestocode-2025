@@ -9,6 +9,10 @@ export default function MessageForm() {
     name: '',
     message: '',
   });
+  const [status, setStatus] = useState({
+    message: '',
+    styles: 'basic',
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,14 +27,20 @@ export default function MessageForm() {
 
       if (response) {
         setFormData({ name: '', message: '' });
-        alert('Your message was sent successfully!');
+        setStatus({ message: 'Message sent.', styles: 'basic' });
       } else {
         console.error('Failed to send the message.');
-        alert('Failed to send the message. Please try again later.');
+        setStatus({
+          message: 'Failed to send message, please try again later.',
+          styles: 'error',
+        });
       }
     } catch (error) {
       console.error('Unexpected error:', error);
-      alert('An unexpected error occurred. Please try again later.');
+      setStatus({
+        message: 'An unexpected error occured, please try again later.',
+        styles: 'error',
+      });
     }
   };
 
@@ -59,7 +69,15 @@ export default function MessageForm() {
             className={styles.messageInput}
           />
         </div>
-        <button type="submit" className={styles.submitButton}>Submit</button>
+        {status && (
+          <p
+            className={status.styles === 'basic' ? styles.basic : styles.error}>
+            {status.message}
+          </p>
+        )}
+        <button type="submit" className={styles.submitButton}>
+          Submit
+        </button>
       </form>
     </div>
   );

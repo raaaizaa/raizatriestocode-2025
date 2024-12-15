@@ -16,14 +16,20 @@ export default function SpotifyCard({
         target="_blank"
         rel="noopener noreferrer"
         className={styles.albumAnchor}>
-        <img alt="album cover" src={albumImage} className={styles.spotifyImage} />
+        <img
+          alt="album cover"
+          src={albumImage}
+          className={styles.spotifyImage}
+        />
       </a>
       <div className={styles.spotifyTextContainer}>
-        <p className={styles.spotifyTitle}>
-          {trackName.length > 25
-            ? `${trackName.substring(0, 25)}...`
-            : trackName}
-        </p>
+        <a href={trackUrl} target="_blank" className={styles.spotifyTitle}>
+          <p className={styles.spotifyTitle}>
+            {trackName.length > 25
+              ? `${trackName.substring(0, 25)}...`
+              : trackName}
+          </p>
+        </a>
         <p className={styles.spotifyArtist}>
           {artistName.length > 25
             ? `${artistName.substring(0, 25)}...`

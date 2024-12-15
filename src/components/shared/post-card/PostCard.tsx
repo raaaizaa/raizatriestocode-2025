@@ -19,8 +19,12 @@ export default function PostCard({ post }: PostCardProps) {
     }
   );
 
+  const handleClick = () => {
+    window.location.href = `/post/${id}`;
+  };
+
   return (
-    <Link to={`/post/${id}`} target='_parent' className={styles.wrapper}>
+    <div onClick={handleClick} className={styles.wrapper}>
       <div className={styles.divider} />
       <div className={styles.contentContainer}>
         <div className={styles.container}>
@@ -45,6 +49,6 @@ export default function PostCard({ post }: PostCardProps) {
           ) : null}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

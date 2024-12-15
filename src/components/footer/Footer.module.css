@@ -25,3 +25,11 @@
   text-align: center;
   font-smooth: always;
 }
+
+.githubIcon {
+  transition: all 0.1s ease-in-out;
+}
+
+.githubIcon:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
