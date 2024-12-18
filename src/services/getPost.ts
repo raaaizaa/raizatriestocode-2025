@@ -37,32 +37,56 @@ export async function getHeadline() {
     const post = await getPost();
     const headlines = await Promise.all(
       post.map(async (item: any) => {
-        const response = await fetch(item.files['index.md'].raw_url);
+        const indexMd = item.files['index.md'];
+        if (!indexMd) {
+          console.warn(`Gist ${item.id} does not contain an index.md file.`);
+          return null;
+        }
+
+        const response = await fetch(indexMd.raw_url);
         const textContent = await response.text();
 
-        // To be honest, for the image part I am completely using the ChatGPT :/
-        const htmlContent = md.render(textContent);
+        if (!textContent.trim()) {
+          console.warn(`Gist ${item.id} contains an empty index.md file.`);
+          return null;
+        }
 
-        const imageMatch = htmlContent.match(/<img [^>]*src="([^"]+)"/);
+        // This will convert the achieved text to HTML content to achieve the image tag and put it into first image to show it to the post card
+        const htmlContent = md.render(textContent);
+        const imageMatch = htmlContent.match(
+          /<h1[^>]*>.*?<\/h1>.*?<img [^>]*src="([^"]+)"/s
+        );
         const firstImage = imageMatch ? imageMatch[1] : null;
 
-        const splittedLine = textContent.split('\n');
-        const firstLine = splittedLine[0];
-        const remainingText = splittedLine.slice(1).join('\n');
+        // Split the text content to several arrays
+        const lines = textContent.split('\n');
+
+        // Achieve the first line to be the headline
+        const firstLine = lines[0].replace(/^#\s*/, '');
+
+        // To avoid the possibility the image will be shown as text in the post card
+        const filteredLines = lines.filter(
+          (line) => !line.includes('![image]')
+        );
+
+        const remainingText = filteredLines.slice(1).join('\n');
+        const cuttedDescription = md.render(
+          `${remainingText.substring(0, 75)}...`
+        );
 
         return {
           id: item.id,
-          url: item.files['index.md'].raw_url,
+          url: indexMd.raw_url,
           headline: firstLine,
-          tag: item.description,
-          cutted_description: `${remainingText.substring(0, 75)}...`,
+          tag: item.description || 'No description provided',
+          cutted_description: cuttedDescription,
           created_at: item.created_at,
           first_image: firstImage,
         };
       })
     );
 
-    return headlines;
+    return headlines.filter(Boolean);
   } catch (error) {
     console.error(error);
   }

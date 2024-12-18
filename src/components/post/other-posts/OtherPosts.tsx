@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getHeadline } from '../../../services/getPost';
 import { PostProps } from '../../../types/post';
+import { shuffle } from '../../../utils/shuffle';
 import LoadingPostCard from '../../shared/post-card/LoadingPostCard';
 import PostCard from '../../shared/post-card/PostCard';
 
@@ -16,7 +17,10 @@ export default function OtherPosts() {
     const fetchPost = async () => {
       try {
         setIsLoading(true);
-        const data = await getHeadline();
+        let data = await getHeadline();
+        if (data) {
+          data = shuffle(data);
+        }
         setData(data);
       } catch (error) {
         console.error('Error fetching posts or Markdown!', error);
@@ -28,19 +32,14 @@ export default function OtherPosts() {
     fetchPost();
   }, []);
 
-  // if (!data || data?.length < 4) {
-  //   return null;
-  // }
-
-  const displayedPosts = data?.slice(0, 4);
-  
+  const displayedPosts = data?.slice(0, POST_COUNT);
   return (
     <div className={styles.container}>
       <p className={styles.title}>See other posts here</p>
       {isLoading ? (
         <div className={styles.dataContainer}>
           {Array.from({ length: POST_COUNT }).map((_, index) => (
-            <LoadingPostCard />
+            <LoadingPostCard key={index}/>
           ))}
         </div>
       ) : (

@@ -1,13 +1,20 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   margin: auto;
-  max-width: 1000px;
+  width: 1000px;
   min-height: calc(100vh - 67px);
+  font-family: 'SohneLight';
+  font-size: 14px;
   box-sizing: border-box;
   user-select: text;
+  gap: 30px;
+}
+
+.content {
+  width: 100%;
 }
 
 .container h1 {
@@ -25,16 +32,20 @@
   font-size: 24px;
 }
 
-.container p {
+.container p:has(img) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container p {
+  display: block;
   text-align: start;
   font-size: 16px;
   font-family: 'SohneLight';
 }
 
-.container img {
+.container p > img {
   max-height: 500px;
 }
 
@@ -45,14 +56,23 @@
 }
 
 .infoContainer {
+  display: flex;
+  flex-direction: column;
   margin: 28px 0px 28px 0px;
+  gap: 2px;
 }
 
-.date {
+.infoContainer > .date {
   text-align: start;
   justify-content: start;
   font-family: 'SohneRegular';
   margin: 0;
+}
+
+.posted {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 14px !important;
 }
 
 .fallbackContainer {
@@ -66,28 +86,34 @@
   box-sizing: border-box;
 }
 
-.loadingText{
+.loadingText {
   display: flex;
   text-align: center;
 }
 
 @media (max-width: 1200px) {
   .container {
-    max-width: 800px;
+    width: 800px;
   }
 }
 
 @media (max-width: 900px) {
   .container {
-    max-width: 600px;
+    width: 600px;
+  }
+
+  .container p > img {
+    max-height: none;
+    width: 100%;
   }
 }
 
 @media (max-width: 700px) {
   .container {
-    max-width: none;
+    width: 100%;
     justify-content: start;
     align-items: start;
+    margin: 0;
   }
 
   .container h1 {

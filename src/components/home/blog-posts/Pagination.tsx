@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Pagination.module.css';
 
-interface PaginationProps {
+interface Props {
   currentPage: number;
   totalPages: number;
   handlePageChange: (page: number) => void;
@@ -12,7 +12,7 @@ export default function Pagination({
   currentPage,
   totalPages,
   handlePageChange,
-}: PaginationProps) {
+}: Props) {
   return (
     <div className={styles.pagination}>
       <button

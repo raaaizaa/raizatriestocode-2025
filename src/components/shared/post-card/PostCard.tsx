@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { PostProps } from '../../../types/post';
 
 import styles from './PostCard.module.css';
 
-interface PostCardProps {
+interface Props {
   post: PostProps;
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post }: Props) {
   const { headline, first_image, created_at, id, cutted_description } = post;
   const formatted_created_at = new Date(created_at).toLocaleDateString(
     'en-US',
@@ -34,7 +33,10 @@ export default function PostCard({ post }: PostCardProps) {
               dangerouslySetInnerHTML={{ __html: headline }}
             />
             <div className={styles.textInfoContainer}>
-              <p className={styles.description}>{cutted_description}</p>
+              <div
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: cutted_description }}
+              />
               <p className={styles.date}>{formatted_created_at}</p>
             </div>
           </div>

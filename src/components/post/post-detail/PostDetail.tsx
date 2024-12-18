@@ -34,7 +34,8 @@ export default function PostDetail() {
 
   return (
     <div className={styles.container}>
-      <div dangerouslySetInnerHTML={{ __html: data.content }} />
+      <div dangerouslySetInnerHTML={{ __html: data.content }} className={styles.content} />
+      <div className={styles.divider}/>
       <div className={styles.infoContainer}>
         <p className={styles.date}>
           {`Updated on `}
@@ -44,6 +45,7 @@ export default function PostDetail() {
             year: 'numeric',
           })}
         </p>
+        <p className={styles.posted}>Posted by Raiza</p>
       </div>
     </div>
   );
