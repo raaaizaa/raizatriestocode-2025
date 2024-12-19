@@ -13,6 +13,7 @@ export default function MessageForm() {
     message: '',
     styles: 'basic',
   });
+  const [isLoading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,17 +24,20 @@ export default function MessageForm() {
     e.preventDefault();
 
     try {
+      setLoading(true);
       const response = await postMessage(formData);
 
       if (response) {
         setFormData({ name: '', message: '' });
         setStatus({ message: 'Message sent.', styles: 'basic' });
+        setLoading(false);
       } else {
         console.error('Failed to send the message.');
         setStatus({
           message: 'Failed to send message, please try again later.',
           styles: 'error',
         });
+        setLoading(false);
       }
     } catch (error) {
       console.error('Unexpected error:', error);
@@ -41,6 +45,7 @@ export default function MessageForm() {
         message: 'An unexpected error occured, please try again later.',
         styles: 'error',
       });
+      setLoading(false);
     }
   };
 
@@ -69,14 +74,18 @@ export default function MessageForm() {
             className={styles.messageInput}
           />
         </div>
-        {status && (
+        {(status || isLoading) && (
           <p
             className={status.styles === 'basic' ? styles.basic : styles.error}>
-            {status.message}
+            {isLoading ? `Loading...` : status.message}
           </p>
         )}
-        <button type="submit" className={styles.submitButton}>
-          Submit
+        <button type="submit" className={styles.submitButton} disabled={isLoading}>
+          {isLoading ? (
+            <div className={styles.loading} />
+          ) : (
+            <p className={styles.submitText}>Submit</p>
+          )}
         </button>
       </form>
     </div>
