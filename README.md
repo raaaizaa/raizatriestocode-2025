@@ -1,1 +1,0 @@
-An update of my previous personal website, now with a blog in it. No sophisticated frameworks, library, design system, etc. Just pure React framework. Back to basic.

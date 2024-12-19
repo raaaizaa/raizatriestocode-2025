@@ -12,8 +12,15 @@ export default function Footer() {
             ©raizatriestocode {new Date().getFullYear()}
           </p>
         </div>
-        <a href="https://github.com/raaaizaa" target="_blank">
-          <img className={styles.githubIcon} src="./github-mark-white.svg" width={24} height={24} />
+        <a
+          href="https://github.com/raaaizaa/raizatriestocode-2025"
+          target="_blank">
+          <img
+            className={styles.githubIcon}
+            src="./github-mark-white.svg"
+            width={24}
+            height={24}
+          />
         </a>
       </div>
     </div>
