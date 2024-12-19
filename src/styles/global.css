@@ -1,14 +1,4 @@
 @font-face {
-  font-family: 'Mustasurma';
-  src: url('../../public/fonts/Mustasurma.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Sourcesans';
-  src: url('../../public/fonts/SourceSans.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'SohneRegular';
   src: url('../../public//fonts/sohne-regular.otf') format('opentype');
 }
