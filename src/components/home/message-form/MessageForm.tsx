@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import postMessage from '../../../services/postMessage';
 import { FormDataProps } from '../../../types/formData';
+import PacmanLoading from '../../shared/loading/PacmanLoading';
 
 import styles from './MessageForm.module.css';
 
@@ -82,7 +83,7 @@ export default function MessageForm() {
         )}
         <button type="submit" className={styles.submitButton} disabled={isLoading}>
           {isLoading ? (
-            <div className={styles.loading} />
+            <PacmanLoading />
           ) : (
             <p className={styles.submitText}>Submit</p>
           )}

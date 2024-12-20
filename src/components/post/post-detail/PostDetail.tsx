@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPostDetail } from '../../../services/getPost';
 import { PostDetailProps } from '../../../types/post';
+import PacmanLoading from '../../shared/loading/PacmanLoading';
 
 import styles from './PostDetail.module.css';
 
@@ -27,7 +28,7 @@ export default function PostDetail() {
   if (!data) {
     return (
       <div className={styles.fallbackContainer}>
-        <p className={styles.loadingText}>Loading post...</p>
+        <PacmanLoading />
       </div>
     );
   }
@@ -38,14 +39,14 @@ export default function PostDetail() {
       <div className={styles.divider}/>
       <div className={styles.infoContainer}>
         <p className={styles.date}>
-          {`Updated on `}
+          {`Posted on `}
           {new Date(data.created_at).toLocaleDateString('en-US', {
             day: '2-digit',
             month: 'short',
             year: 'numeric',
           })}
         </p>
-        <p className={styles.posted}>Posted by Raiza</p>
+        <p className={styles.posted}>- Raiza</p>
       </div>
     </div>
   );

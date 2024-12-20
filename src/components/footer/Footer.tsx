@@ -17,7 +17,7 @@ export default function Footer() {
           target="_blank">
           <img
             className={styles.githubIcon}
-            src="./github-mark-white.svg"
+            src="../github-mark-white.svg"
             width={24}
             height={24}
           />

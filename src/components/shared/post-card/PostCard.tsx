@@ -46,6 +46,7 @@ export default function PostCard({ post }: Props) {
                 src={first_image}
                 alt="Post image"
                 className={styles.image}
+                loading="lazy"
               />
             </div>
           ) : null}

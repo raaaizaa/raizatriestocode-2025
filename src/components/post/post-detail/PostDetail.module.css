@@ -49,6 +49,20 @@
   max-height: 500px;
 }
 
+.container ul > li {
+  font-size: 16px;
+}
+
+pre code {
+  background-color: #282c34;
+  color: #abb2bf; 
+  padding: 12px;
+  border-radius: 6px;
+  display: block;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
 .divider {
   display: flex;
   width: 100%;
@@ -129,6 +143,10 @@
   }
 
   .container p {
+    font-size: 14px;
+  }
+
+  .container ul > li {
     font-size: 14px;
   }
 
