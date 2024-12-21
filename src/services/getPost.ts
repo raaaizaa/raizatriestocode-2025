@@ -104,12 +104,43 @@ export async function getPostDetail(id: string) {
 
     const formattedContent = md.render(data.files['index.md'].content);
 
-    return {
+    const lines = formattedContent.split('\n');
+
+    const headline = lines[0]
+      .replace(/<\/?[^>]+(>|$)/g, '')
+      .replace(/^#\s*/, '');
+
+    const filteredLines = lines.filter((line) => !line.includes('![image]'));
+
+    const remainingText = filteredLines.slice(1).join('\n');
+    const cuttedDescription = `${remainingText.substring(0, 75)}...`
+      .replace(/<\/?[^>]+(>|$)/g, '')
+      .replace(/^#\s*/, '');
+
+    const imageMatch = formattedContent.match(
+      /<h1[^>]*>.*?<\/h1>.*?<img [^>]*src="([^"]+)"/s
+    );
+    const image = imageMatch ? imageMatch[1] : null;
+
+    const postDetails = {
       content: formattedContent,
       description: data.description,
       created_at: data.created_at,
     };
+
+    const postSEO = {
+      headline: headline,
+      image: image,
+      description: cuttedDescription,
+      url: `itsnotquitemidnight.vercel.app/post/${id}`,
+    };
+
+    return { postDetails, postSEO };
   } catch (error) {
     console.error();
+    return {
+      postDetails: null,
+      postSEO: null,
+    };
   }
 }

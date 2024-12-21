@@ -13,3 +13,10 @@ export interface PostDetailProps {
   description: string;
   created_at: string;
 }
+
+export interface PostSEOProps{
+  headline: string,
+  image: string,
+  description: string,
+  url: string,
+}
