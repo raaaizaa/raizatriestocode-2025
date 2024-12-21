@@ -11,6 +11,10 @@
   margin: 0;
 }
 
+.spotifyColor{
+  color: #1db954;
+}
+
 @media (max-width: 1050px){
   .container{
     width: auto;

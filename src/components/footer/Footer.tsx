@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <p className={styles.text}>Created With 💖 by Raiza</p>
           <p className={styles.text}>
-            ©raizatriestocode {new Date().getFullYear()}
+            ©itsnotquitemidnight {new Date().getFullYear()}
           </p>
         </div>
         <a

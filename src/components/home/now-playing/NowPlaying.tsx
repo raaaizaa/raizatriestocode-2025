@@ -35,7 +35,7 @@ export default function NowPlaying() {
   return (
     <div className={styles.container}>
       <p className={styles.title}>
-        {data?.playedAt ? 'Last played' : 'Now playing'}
+        {data?.playedAt ? 'Last played on ' : 'Now playing on '}<span className={styles.spotifyColor}>Spotify</span>
       </p>
       <SpotifyCard {...data} />
     </div>

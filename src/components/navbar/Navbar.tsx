@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className={styles.container}>
       <a href="/" className={styles.title}>
-        raizatriestocode
+        itsnotquitemidnight
       </a>
     </div>
   );

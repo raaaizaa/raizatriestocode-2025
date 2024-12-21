@@ -47,7 +47,7 @@ export default function BlogPosts() {
     <div className={styles.container}>
       <div className={styles.titleContainer}>
         <p className={styles.title}>
-          A personal blog that consists of his thoughts over time.
+          A personal blog that consists of his thoughts over time
         </p>
         <p className={styles.subtitle}>
           Karena biasanya banyak hal yang dipikirin tapi gatau mau ditaro
