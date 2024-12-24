@@ -11,6 +11,22 @@
   margin: 0;
 }
 
+.question{
+  color: #6b6b6b;
+  font-family: 'SohneLight';
+  font-style: italic;
+}
+
+.question:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.answer{
+  color: #6b6b6b;
+  font-family: 'SohneLight';
+}
+
 .formContainer {
   display: flex;
   flex-direction: column;

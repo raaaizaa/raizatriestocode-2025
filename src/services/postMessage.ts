@@ -2,9 +2,7 @@ import { FormDataProps } from '../types/formData';
 
 const SHEETS_ID = process.env.REACT_APP_SHEETS_ID;
 
-export default async function postMessage(
-  formData: FormDataProps
-): Promise<boolean> {
+export default async function postMessage(formData: FormDataProps) {
   try {
     const response = await fetch(
       `https://script.google.com/macros/s/${SHEETS_ID}/exec`,
@@ -13,15 +11,13 @@ export default async function postMessage(
         body: JSON.stringify(formData),
       }
     );
+    const result = await response.json();
 
-    if (!response.ok) {
-      console.error('HTTP error:', response.status, response.statusText);
+    if (!response) {
       return false;
     }
 
-    const result = await response.json();
-
-    return result.success === true;
+    return result;
   } catch (error) {
     console.error('Error in postMessage:', error);
     return false;
