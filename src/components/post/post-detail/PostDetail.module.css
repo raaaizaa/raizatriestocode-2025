@@ -64,7 +64,7 @@
   margin: 0;
 }
 
-pre code {
+.container pre code {
   background-color: #282c34;
   color: #abb2bf; 
   padding: 12px;

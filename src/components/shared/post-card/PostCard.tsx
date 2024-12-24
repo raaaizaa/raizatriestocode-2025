@@ -30,7 +30,12 @@ export default function PostCard({ post }: Props) {
           <div className={styles.textContainer}>
             <p
               className={styles.label}
-              dangerouslySetInnerHTML={{ __html: `${headline.substring(0, 30)}...` }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  headline.length > 150
+                    ? `${headline.substring(0, 150)}...`
+                    : headline,
+              }}
             />
             <div className={styles.textInfoContainer}>
               <div

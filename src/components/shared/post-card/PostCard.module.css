@@ -17,7 +17,7 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  height: 160px;
+  padding: 28px 0px 28px 0px;
   justify-content: center;
 }
 
@@ -32,6 +32,7 @@
   flex-direction: column;
   color: black;
   gap: 12px;
+  width: 580px;
 }
 
 .label,
@@ -39,6 +40,7 @@
   font-family: 'SohneBold';
   color: black;
   margin: 0;
+  font-size: 22px;
 }
 
 .textInfoContainer {
@@ -70,13 +72,13 @@
 }
 
 @media (max-width: 800px) {
-  .contentContainer {
-    height: 180px;
+  .textContainer {
+    width: 100%;
   }
 
   .label,
   .label > h1 {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .description {
@@ -95,11 +97,6 @@
 }
 
 @media (max-width: 600px) {
-  .label,
-  .label > h1 {
-    font-size: 24px;
-  }
-
   .description {
     font-size: 12px;
   }
