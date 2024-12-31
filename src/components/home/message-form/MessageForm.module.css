@@ -15,11 +15,12 @@
   color: #6b6b6b;
   font-family: 'SohneLight';
   font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .question:hover{
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .answer{
