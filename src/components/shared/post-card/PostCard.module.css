@@ -81,7 +81,7 @@
     font-size: 20px;
   }
 
-  .description {
+  .description > p {
     font-size: 14px;
   }
 
@@ -97,9 +97,6 @@
 }
 
 @media (max-width: 600px) {
-  .description {
-    font-size: 12px;
-  }
 
   .date {
     font-size: 10px;

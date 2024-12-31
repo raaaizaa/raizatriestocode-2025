@@ -13,6 +13,11 @@
   src: url('../../public//fonts/sohne-light.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'HitMePunk';
+  src: url('../../public/fonts/hit-me-punk.ttf') format('opentype');
+}
+
 body {
   font-family: 'SohneRegular';
   margin: 0;
