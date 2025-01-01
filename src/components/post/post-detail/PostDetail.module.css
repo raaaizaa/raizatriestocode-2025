@@ -160,6 +160,10 @@
   .container ul > li {
     font-size: 14px;
   }
+  
+  .container ol > li {
+    font-size: 14px;
+  }
 
   .container img {
     max-height: 400px;
