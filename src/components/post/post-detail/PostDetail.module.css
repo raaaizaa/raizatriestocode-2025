@@ -4,9 +4,10 @@
   justify-content: center;
   align-items: start;
   margin: auto;
-  width: 1000px;
+  width: 800px;
   min-height: calc(100vh - 67px);
   font-family: 'SohneLight';
+  letter-spacing: -0.003em;
   font-size: 14px;
   box-sizing: border-box;
   user-select: text;
@@ -42,6 +43,7 @@
   display: block;
   text-align: start;
   font-size: 16px;
+  /* line-height: 32px; */
   font-family: 'SohneLight';
 }
 
@@ -66,7 +68,7 @@
 
 .container pre code {
   background-color: #282c34;
-  color: #abb2bf; 
+  color: #abb2bf;
   padding: 12px;
   border-radius: 6px;
   display: block;
@@ -118,13 +120,13 @@
 
 @media (max-width: 1200px) {
   .container {
-    width: 800px;
+    width: 700px;
   }
 }
 
 @media (max-width: 900px) {
   .container {
-    width: 600px;
+    width: 500px;
   }
 
   .container p > img {
