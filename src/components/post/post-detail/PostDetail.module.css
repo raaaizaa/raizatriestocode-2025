@@ -6,7 +6,7 @@
   margin: auto;
   width: 800px;
   min-height: calc(100vh - 67px);
-  font-family: 'SohneLight';
+  font-family: 'Garamond';
   letter-spacing: -0.003em;
   font-size: 14px;
   box-sizing: border-box;
@@ -42,9 +42,10 @@
 .container p {
   display: block;
   text-align: start;
-  font-size: 16px;
-  /* line-height: 32px; */
-  font-family: 'SohneLight';
+  font-size: 20px;
+  line-height: 32px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: -0.003em;
 }
 
 .container p > img {
@@ -52,15 +53,15 @@
 }
 
 .container ul > li {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .container ol > li {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .container blockquote {
-  font-size: 16px;
+  font-size: 20px;
   border-left: 4px solid rgb(200, 200, 200);
   padding-left: 12px;
   margin: 0;

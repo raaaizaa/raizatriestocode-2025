@@ -9,7 +9,7 @@ import styles from './PostDetail.module.css';
 
 export default function PostDetail() {
   const [postDetails, setPostDetails] = useState<PostDetailProps | null>(null);
-  const [postSEO, setPostSEO] = useState<PostSEOProps | null>(null); // Separate state for postSEO
+  const [postSEO, setPostSEO] = useState<PostSEOProps | null>(null);
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
@@ -38,17 +38,9 @@ export default function PostDetail() {
 
   return (
     <>
+      {/* TODO: this shit need a backend service to get right metadata for social media sharing. i will work on it, later. */}
       <Helmet>
-        <title>{postSEO.headline || 'Default Title'}</title>
-        <meta name="description" content={postSEO.description} />
-        <meta property="og:title" content={postSEO.headline} />
-        <meta property="og:description" content={postSEO.description} />
-        <meta property="og:image" content={postSEO.image || ''} />
-        <meta property="og:url" content={postSEO.url} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={postSEO.headline} />
-        <meta name="twitter:description" content={postSEO.description} />
-        <meta name="twitter:image" content={postSEO.image || ''} />
+        <title>{`${postSEO?.headline} | It's Not Quite Midnight`}</title>
       </Helmet>
 
       <div className={styles.container}>
@@ -66,7 +58,6 @@ export default function PostDetail() {
               year: 'numeric',
             })}
           </p>
-          <p className={styles.posted}>- Raiza</p>
         </div>
       </div>
     </>
