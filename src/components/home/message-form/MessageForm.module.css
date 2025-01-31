@@ -6,14 +6,14 @@
 }
 
 .label {
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   font-size: 40px;
   margin: 0;
 }
 
 .question{
   color: #6b6b6b;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   font-style: italic;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -25,7 +25,7 @@
 
 .answer{
   color: #6b6b6b;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
 }
 
 .formContainer {
@@ -47,7 +47,7 @@
 .nameInput {
   border-radius: 4px;
   font-size: 16px;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   border: 0.5px solid;
   height: 24px;
 }
@@ -55,27 +55,27 @@
 .messageInput {
   border-radius: 4px;
   font-size: 16px;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   border: 0.5px solid;
   height: 100px;
 }
 
 .basic {
   margin: 0;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   font-size: 14px;
   color: #6b6b6b;
 }
 
 .error {
   margin: 0;
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   font-size: 14px;
   color: red;
 }
 
 .submitButton {
-  font-family: 'SohneRegular';
+  font-family: 'InterRegular';
   font-size: 16px;
   padding: 12px;
   border: none;

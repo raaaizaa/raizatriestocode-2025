@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  padding: 8px 36px 8px 36px;
+  padding: 8px 72px 8px 72px;
   height: 50px;
   align-items: center;
   background-color: white;
@@ -13,7 +13,7 @@
 
 .title {
   font-family: 'HitMePunk';
-  font-size: 52px;
+  font-size: 40px;
   margin: 0;
   text-decoration: none;
   color: black;

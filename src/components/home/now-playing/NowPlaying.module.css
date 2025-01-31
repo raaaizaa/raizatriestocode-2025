@@ -6,13 +6,19 @@
 }
 
 .title{
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   font-size: 40px;
   margin: 0;
 }
 
 .spotifyColor{
   color: #1db954;
+  text-decoration: none;
+}
+
+.spotifyColor:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
 }
 
 @media (max-width: 1050px){

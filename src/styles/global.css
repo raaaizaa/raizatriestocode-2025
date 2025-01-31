@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'SohneRegular';
-  src: url('../../public//fonts/sohne-regular.otf') format('opentype');
+  font-family: 'InterRegular';
+  src: url('../../public//fonts/Inter_24pt-Regular.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: 'SohneBold';
-  src: url('../../public//fonts/sohne-bold.otf') format('opentype');
+  font-family: 'InterBold';
+  src: url('../../public//fonts/Inter_24pt-Bold.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: 'SohneLight';
-  src: url('../../public//fonts/sohne-light.otf') format('opentype');
+  font-family: 'InterLight';
+  src: url('../../public//fonts/Inter_24pt-Light.ttf') format('opentype');
 }
 
 @font-face {
@@ -18,8 +18,13 @@
   src: url('../../public/fonts/hit-me-punk.ttf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Garamond';
+  src: url('../../public/fonts/garamond.ttf') format('opentype');
+}
+
 body {
-  font-family: 'SohneRegular';
+  font-family: 'InterRegular';
   margin: 0;
   user-select: none;
 }

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: start;
   margin: auto;
-  width: 680px;
+  width: 672px;
   min-height: calc(100vh - 67px);
   letter-spacing: -0.003em;
   font-size: 14px;
@@ -16,20 +16,23 @@
 
 .content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .container h1 {
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   font-size: 32px;
 }
 
 .container h2 {
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   font-size: 28px;
 }
 
 .container h3 {
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   font-size: 24px;
 }
 
@@ -42,10 +45,11 @@
 .container p {
   display: block;
   text-align: start;
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-family: 'InterRegular';
   line-height: 32px;
   letter-spacing: -0.003em;
+  margin: 0;
 }
 
 .container p > img {
@@ -54,27 +58,28 @@
 }
 
 .container ul > li {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 32px;
   letter-spacing: -0.003em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'InterRegular';
 }
 
 .container ol > li {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 32px;
   letter-spacing: -0.003em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'InterRegular';
 }
 
 .container blockquote {
-  font-size: 20px;
+  font-size: 18px;
   border-left: 4px solid rgb(200, 200, 200);
+  font-style: italic;
   padding-left: 12px;
   margin: 0;
   line-height: 32px;
   letter-spacing: -0.003em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'InterRegular';
 }
 
 .container pre code {
@@ -103,7 +108,7 @@
 .infoContainer > .date {
   text-align: start;
   justify-content: start;
-  font-family: 'SohneRegular';
+  font-family: 'InterRegular';
   margin: 0;
 }
 
