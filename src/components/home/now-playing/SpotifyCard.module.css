@@ -24,7 +24,7 @@
 }
 
 .spotifyTitle {
-  font-family: 'SohneBold';
+  font-family: 'InterBold';
   text-decoration: none;
   color: black;
   font-size: 28px;
@@ -38,7 +38,7 @@
 }
 
 .spotifyArtist {
-  font-family: 'SohneLight';
+  font-family: 'InterLight';
   color: #6b6b6b;
   font-size: 20px;
   margin: 0;
