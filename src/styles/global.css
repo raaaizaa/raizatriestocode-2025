@@ -18,6 +18,11 @@
   src: url('../../public/fonts/hit-me-punk.ttf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Garamond';
+  src: url('../../public/fonts/garamond.ttf') format('opentype');
+}
+
 body {
   font-family: 'InterRegular';
   margin: 0;
